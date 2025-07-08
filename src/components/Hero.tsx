@@ -1,6 +1,6 @@
 import { MapPin, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/vedant-illustration.jpg";
+import heroImage from "@/assets/vedant-pfp.png";
 
 const Hero = () => {
   const scrollToProjects = () => {

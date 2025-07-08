@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImage from "@/assets/vedant-logo.png";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,7 +13,7 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 50);
 
       // Update active section based on scroll position
-      const sections = ["hero", "projects", "expertise", "experience"];
+      const sections = ["hero", "projects", "expertise", "experience", "contact"];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -41,6 +42,7 @@ const Navigation = () => {
     { id: "projects", label: "Projects" },
     { id: "expertise", label: "Expertise" },
     { id: "experience", label: "Experience" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (
@@ -56,9 +58,10 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-bold text-gradient-primary hover:scale-105 transition-transform"
+            className="flex items-center gap-3 hover:scale-105 transition-transform"
           >
-            Vedant
+            <img src={logoImage} alt="Vedant Logo" className="w-8 h-8 hover:rotate-12 transition-transform duration-300" />
+            <span className="text-xl font-bold text-gradient-primary">Vedant</span>
           </button>
 
           {/* Desktop Navigation */}
