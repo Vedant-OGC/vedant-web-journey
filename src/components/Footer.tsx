@@ -151,12 +151,12 @@ const Footer = () => {
           <div className="border-t border-border/50 pt-8 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-muted-foreground text-sm">
-                © {new Date().getFullYear()} Vedant. Built with React, TypeScript & lots of ☕
+                © {new Date().getFullYear()} Vedant. All rights reserved
               </p>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <span>Made with</span>
                 <Heart className="w-4 h-4 text-red-500 animate-pulse" />
-                <span>in Visakhapatnam</span>
+                <span>by Vedant</span>
               </div>
             </div>
           </div>
