@@ -70,7 +70,7 @@ const Footer = () => {
                   <Button 
                     variant="outline" 
                     className="border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
-                    onClick={() => window.open('mailto:vedant@example.com', '_blank')}
+                    onClick={() => window.open('mailto:manasmishra1275@gmail.com', '_blank')}
                   >
                     Send Email
                   </Button>
