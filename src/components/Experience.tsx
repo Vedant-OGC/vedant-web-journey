@@ -68,6 +68,13 @@ const Experience = () => {
       glowColor: "shadow-purple-500/20",
       items: [
         {
+          title: "Digital Marketing & Developer Intern",
+          provider: "Indie Kit",
+          period: "July 2025 - Ongoing",
+          location: "Remote",
+          description: "Working on digital marketing strategies and development projects, gaining experience in both marketing and technical domains"
+        },
+        {
           title: "Web Dev Intern",
           provider: "PixelCore Technologies",
           period: "Aug 2024",
