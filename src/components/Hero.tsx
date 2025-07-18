@@ -1,5 +1,6 @@
 import { MapPin, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ScrollAnimation, FloatingElement } from "@/components/ScrollAnimations";
 import heroImage from "@/assets/vedant-pfp.png";
 
 const Hero = () => {
@@ -20,19 +21,21 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Profile Image */}
-          <div className="mb-8 animate-bounce-in">
-            <div className="relative inline-block">
-              <img
-                src={heroImage}
-                alt="Vedant - Developer"
-                className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover border-4 border-primary/20 shadow-2xl hover-lift"
-              />
-              <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-20 animate-glow-pulse" />
-            </div>
-          </div>
+          <ScrollAnimation className="mb-8">
+            <FloatingElement>
+              <div className="relative inline-block">
+                <img
+                  src={heroImage}
+                  alt="Vedant - Developer"
+                  className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover border-4 border-primary/20 shadow-2xl hover-lift"
+                />
+                <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-20 animate-glow-pulse" />
+              </div>
+            </FloatingElement>
+          </ScrollAnimation>
 
           {/* Main Content */}
-          <div className="space-y-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <ScrollAnimation delay={0.2} className="space-y-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
               Hi, I'm{" "}
               <span className="text-gradient-primary">Vedant</span>
@@ -45,14 +48,14 @@ const Hero = () => {
               <span className="text-primary font-semibold">cool stuff</span>
             </p>
             
-            <div className="flex items-center justify-center gap-2 text-muted-foreground animate-slide-in-left" style={{ animationDelay: "0.4s" }}>
+            <div className="flex items-center justify-center gap-2 text-muted-foreground">
               <MapPin className="w-5 h-5 text-primary" />
               <span className="text-lg">Visakhapatnam, India</span>
             </div>
-          </div>
+          </ScrollAnimation>
 
           {/* CTA Button */}
-          <div className="mt-12 animate-slide-in-right" style={{ animationDelay: "0.6s" }}>
+          <ScrollAnimation delay={0.4} className="mt-12">
             <Button
               onClick={scrollToProjects}
               size="lg"
@@ -61,7 +64,7 @@ const Hero = () => {
               Explore My Work
               <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
             </Button>
-          </div>
+          </ScrollAnimation>
 
           {/* Scroll Indicator */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">

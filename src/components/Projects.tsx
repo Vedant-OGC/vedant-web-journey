@@ -1,7 +1,8 @@
-import { ExternalLink, Github, Eye, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Eye, ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ScrollAnimation, StaggerContainer, InteractiveCard } from "@/components/ScrollAnimations";
 
 // Import project images
 import portfolioImg from "@/assets/project-portfolio.jpg";
@@ -78,7 +79,7 @@ const Projects = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-20 animate-fade-in">
+          <ScrollAnimation className="text-center mb-20">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Featured <span className="text-gradient-primary">Projects</span>
             </h2>
@@ -86,19 +87,18 @@ const Projects = () => {
               Explore my latest work and creative solutions
             </p>
             <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
-          </div>
+          </ScrollAnimation>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card 
-                key={project.id} 
-                className="group relative bg-gradient-card border-border/50 overflow-hidden hover-lift animate-fade-in transition-all duration-500 hover:scale-105"
-                style={{ 
-                  animationDelay: `${0.1 * index}s`,
-                  transform: 'perspective(1000px) rotateX(0deg)'
-                }}
-              >
+              <InteractiveCard key={project.id}>
+                <Card 
+                  className="group relative bg-gradient-card border-border/50 overflow-hidden hover-lift transition-all duration-500"
+                  style={{ 
+                    transform: 'perspective(1000px) rotateX(0deg)'
+                  }}
+                >
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
                   <img 
@@ -120,7 +120,7 @@ const Projects = () => {
 
                   {/* Quick Actions Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/20 backdrop-blur-sm">
-                    <div className="flex gap-3">
+                     <div className="flex gap-3">
                       <Button 
                         size="sm" 
                         variant="secondary"
@@ -128,18 +128,8 @@ const Projects = () => {
                         onClick={() => window.open(project.link, '_blank')}
                       >
                         <Eye className="w-4 h-4 mr-2" />
-                        View
+                        View Live
                       </Button>
-                      {project.github !== "#" && (
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          className="backdrop-blur-sm bg-background/80 hover:bg-background/90"
-                          onClick={() => window.open(project.github, '_blank')}
-                        >
-                          <Github className="w-4 h-4" />
-                        </Button>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -169,23 +159,12 @@ const Projects = () => {
                       <Button 
                         size="sm" 
                         variant="outline" 
-                        className="flex-1 group/btn"
+                        className="w-full group/btn"
                         onClick={() => window.open(project.link, '_blank')}
                       >
                         <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:rotate-45 transition-transform" />
-                        Live Demo
+                        View Project
                       </Button>
-                      {project.github !== "#" && (
-                        <Button 
-                          size="sm" 
-                          variant="outline" 
-                          className="flex-1"
-                          onClick={() => window.open(project.github, '_blank')}
-                        >
-                          <Github className="w-4 h-4 mr-2" />
-                          Code
-                        </Button>
-                      )}
                     </div>
                   </div>
                 </CardContent>
@@ -195,25 +174,26 @@ const Projects = () => {
                   <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-20 blur-xl scale-110`} />
                 </div>
               </Card>
+              </InteractiveCard>
             ))}
-          </div>
+          </StaggerContainer>
 
           {/* Call to Action */}
-          <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+          <ScrollAnimation delay={0.6} className="text-center mt-16">
             <p className="text-muted-foreground mb-6">
-              Want to see more of my work?
+              Ready to bring your ideas to life?
             </p>
             <Button 
               variant="outline" 
               size="lg"
               className="group"
-              onClick={() => window.open("https://github.com/Vedant-OGC", '_blank')}
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <Github className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-              View All Projects on GitHub
+              <ExternalLink className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+              Get In Touch
               <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Button>
-          </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>
