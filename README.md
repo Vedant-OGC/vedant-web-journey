@@ -1,44 +1,45 @@
+# Vedant's Portfolio
 
+A modern, interactive portfolio website showcasing my projects and skills.
 
-## Project info
+**Live URL**: https://ogc-vedant.framer.website/
 
-**URL**: https://ogc-vedant.framer.website/
-
-
-
-
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **React** - Modern JavaScript library for building user interfaces
+- **TypeScript** - Type-safe JavaScript development
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - Beautiful UI components
+- **Framer Motion** - Smooth animations and interactions
 
-## How can I deploy this project?
+## Projects Featured
 
-using netifly or vercel
-## Can I connect a custom domain to my Lovable project?
+- **Portfolio Website** - Personal portfolio built with React and TypeScript
+- **TagVault** - Tag management application
+- **Special Message** - Romantic messaging app
+- **ChatScore** - Chat scoring and analytics platform
+- **WebOS** - Basic web-based operating system
 
-Yes, you can!
+## Development
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```bash
+# Install dependencies
+npm install
 
+# Start development server
+npm run dev
 
+# Build for production
+npm run build
+```
+
+## Deployment
+
+This project can be deployed on:
+- Vercel
+- Netlify
+- GitHub Pages
+- Any static hosting platform
